@@ -5,22 +5,27 @@ import pydirectinput
 import pyautogui
 import TwitchPlays_Connection
 from TwitchPlays_KeyCodes import *
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 ##################### GAME VARIABLES #####################
 
 # Replace this with your Twitch username. Must be all lowercase.
-TWITCH_CHANNEL = 'dougdougw' 
+TWITCH_CHANNEL = os.getenv('TWITCH_CHANNEL')
 
 # If streaming on Youtube, set this to False
-STREAMING_ON_TWITCH = True
+STREAMING_ON_TWITCH = bool(os.getenv('STREAMING_ON_TWITCH')) | False
 
 # If you're streaming on Youtube, replace this with your Youtube's Channel ID
 # Find this by clicking your Youtube profile pic -> Settings -> Advanced Settings
-YOUTUBE_CHANNEL_ID = "YOUTUBE_CHANNEL_ID_HERE" 
+YOUTUBE_CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
 
 # If you're using an Unlisted stream to test on Youtube, replace "None" below with your stream's URL in quotes.
 # Otherwise you can leave this as "None"
-YOUTUBE_STREAM_URL = None
+YOUTUBE_STREAM_URL = os.getenv('YOUTUBE_STREAM_URL') | None
 
 ##################### MESSAGE QUEUE VARIABLES #####################
 
