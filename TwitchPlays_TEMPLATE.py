@@ -1,12 +1,14 @@
 import concurrent.futures
+import os
 import random
+
 import keyboard
-import pydirectinput
 import pyautogui
+import pydirectinput
+from dotenv import load_dotenv
+
 import TwitchPlays_Connection
 from TwitchPlays_KeyCodes import *
-from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
